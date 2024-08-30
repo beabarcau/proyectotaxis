@@ -1,0 +1,8 @@
+{
+  "name": "proyectotaxis",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "87f6d1bc"
+}
