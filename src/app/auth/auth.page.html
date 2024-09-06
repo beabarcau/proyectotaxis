@@ -1,0 +1,68 @@
+<ion-content>
+
+  <app-header></app-header>
+
+
+<h2 ion-text-center ion-no-margin>Ingresa tu Usuario</h2>
+
+    
+
+
+
+
+
+
+  <div class="content">
+
+    <div class="d-flex-center">
+
+      <!-- FORMULARIO DE INICIO DE SESION -->
+      <form (keyup.enter)="submit()" (ngSubmit)="submit()" class="ion-text-center">
+
+        <app-custom-input [control]="form.controls.email" type="email" label="Correo " icon="mail-outline" ></app-custom-input>
+      
+        <div class="validators" *ngIf="form.controls.email.errors && form.controls.email.dirty">
+          <div *ngIf="form.controls.email.errors?.['required']">Ingresa el Email</div>
+          <div *ngIf="form.controls.email.errors?.['email']">Ingresa un email válido</div>
+      
+      
+        </div>
+      
+        <app-custom-input [control]="form.controls.password" type="password" label="Contraseña" icon="lock-closed-outline" ></app-custom-input>
+      
+        <div class="validators" *ngIf="form.controls.password.errors && form.controls.password.dirty">
+          <div *ngIf="form.controls.password.errors?.['required']">Ingresa la contraseña</div>
+        </div>
+      
+
+        <p routerLink="forgot-password" class="ion-text-end">Olvidaste tu contraseña?</p>
+
+
+
+        <ion-button class="ion-margin-vertical" [disabled]="form.invalid" type="submit" shape="round">
+          Ingresar
+          <ion-icon slot="end" name="log-in-outline"></ion-icon>
+        </ion-button>
+      
+      <div class="signup">
+        <div>No tienes una cuenta?</div>
+        <ion-button routerLink="signup" class="ion-margin-vertical" shape="round">
+          Registrate
+          <ion-icon slot="end" name="person-add-outline"></ion-icon>
+        </ion-button>
+      </div>
+
+
+      </form>
+
+
+    </div>
+
+      
+  </div>
+
+
+
+
+
+</ion-content>

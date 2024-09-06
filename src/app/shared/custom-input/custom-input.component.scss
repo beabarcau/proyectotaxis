@@ -1,0 +1,4 @@
+ion-input:focus-within + ion-label,
+ion-input:not(:placeholder-shown) + ion-label {
+  transform: translateY(-14px) scale(0.8);
+}
