@@ -9,7 +9,7 @@ import { InfiniteScrollCustomEvent, AlertController } from '@ionic/angular';
 export class ExampleComponent implements OnInit {
   items: { name: string; status: string; isDisabled: boolean }[] = [];
   names: string[] = ['Santiago', 'Valeria', 'Mateo', 'Carla', 'Aylin', 'Sofía', 'Diego', 'Martina', 'Nicolás', 'Emilia', 'Lucas', 'Isabella', 'Joaquín', 'Renata', 'Tomás', 'Olivia', 'Gabriel', 'Antonella', 'Samuel', 'Victoria', 'Felipe', 'Paulina', 'Sebastián', 'Florencia', 'Matías', 'Luna'];
-  lastnames: string[] = ['Espinoza', 'Ortega', 'Peña', 'Guzmán', 'Suárez', 'Soto', 'Paredes', 'Navarro', 'Mendoza', 'Fuentes', 'Reyes', 'Silva', 'León', 'Castillo', 'Vargas', 'Díaz', 'Ramírez', 'López', 'Morales', 'Rojas', 'Herrera', 'Pérez', 'Fernández', 'Gómez', 'Torres', 'Martínez'];
+  lastnames: string[] = ['Espinoza', 'Ortega', 'Peña', 'Guzmán', 'Suárez', 'Soto', 'Paredes', 'Gutiérrez', 'Mendoza', 'Fuentes', 'Reyes', 'Silva', 'León', 'Castillo', 'Vargas', 'Díaz', 'Ramírez', 'López', 'Morales', 'Rojas', 'Herrera', 'Pérez', 'Fernández', 'Gómez', 'Torres', 'Martínez'];
 
   constructor(private alertController: AlertController) {}
 
