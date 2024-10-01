@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
 import { RouterModule } from '@angular/router';
-import { ComponentesComponent } from '../componentes/componentes.component'; 
+
 import { ExampleComponent } from '../scroll/scroll.component';
 import { RefreshListComponent } from '../refresh/refresh.component';
 

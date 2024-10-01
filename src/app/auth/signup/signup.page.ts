@@ -55,7 +55,7 @@ export class SignupPage implements OnInit {
           email: this.form.value.email
         };
         this.utilsSvc.setElementInLocalStorage('user', user);
-        this.utilsSvc.routerLink('/tabs');
+        this.utilsSvc.routerLink('/tab1');
 
         this.utilsSvc.dismissLoading();
 
