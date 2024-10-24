@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { LoadingController, LoadingOptions, ToastController, ToastOptions } from '@ionic/angular';
 import { Router } from '@angular/router';
 
@@ -7,9 +7,10 @@ import { Router } from '@angular/router';
 })
 export class UtilsService {
 
+  router = inject(Router);
+
   constructor(
     private loadingController: LoadingController,
-    private router: Router,
     private toastController: ToastController
   ) { }
 
@@ -22,28 +23,28 @@ export class UtilsService {
 
   //DISMISS 
 
-  async dismissLoading(){
+  async dismissLoading() {
     return await this.loadingController.dismiss()
   }
 
   //Local
 
   //set
-  setElementInLocalStorage(key: string, element: any){
+  setElementInLocalStorage(key: string, element: any) {
     return localStorage.setItem(key, JSON.stringify(element))
   }
 
   //get
-  getElementFromLocalStorage(key: string){
-    return(JSON.parse(localStorage.getItem(key)))
+  getElementFromLocalStorage(key: string) {
+    return (JSON.parse(localStorage.getItem(key)))
   }
-  
+
   async presentToast(opts?: ToastOptions) {
     const toast = await this.toastController.create(opts);
     toast.present();
   }
 
-  routerLink(url: string){
+  routerLink(url: string) {
     return this.router.navigateByUrl(url);
   }
 

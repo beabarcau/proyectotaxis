@@ -13,6 +13,7 @@ import { UtilsService } from 'src/app/services/utils.service';
 export class SignupPage implements OnInit {
 
   form = new FormGroup({
+    uid: new FormControl(''),
     name: new FormControl('', [Validators.required, Validators.minLength(4)]),
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
@@ -54,6 +55,11 @@ export class SignupPage implements OnInit {
           carrera: this.form.value.carrera,
           email: this.form.value.email
         };
+
+        let uid = res.user.uid;
+        this.form.controls.uid.setValue(uid);
+        this.setUserInfo(uid);
+
         this.utilsSvc.setElementInLocalStorage('user', user);
         this.utilsSvc.routerLink('/tabs');
 
@@ -76,6 +82,33 @@ export class SignupPage implements OnInit {
           icon: 'alert-circle-outline'
         });
       });
+    }
+  }
+
+  setUserInfo(uid: string) {
+    if (this.form.valid) {
+      this.utilsSvc.presentLoading({ message: 'Registrando Usuario' });
+      
+      let path = `user/${uid}`;
+      delete this.form.value.password;
+
+      this.firebaseSvc.setDocument(path, this.form.value).then(async res => {
+        console.log(res);
+
+        this.utilsSvc.setElementInLocalStorage('user', this.form.value);
+        this.utilsSvc.routerLink('./tabs/tab1');
+        this.form.reset();
+        await this.firebaseSvc.updateUser({ displayName: this.form.value.name });
+        
+        error => {
+        this.utilsSvc.dismissLoading();
+        this.utilsSvc.presentToast({
+          message: error,
+          duration: 5000,
+          color: 'warning',
+          icon: 'alert-circle-outline'
+        });
+      }});
     }
   }
 }

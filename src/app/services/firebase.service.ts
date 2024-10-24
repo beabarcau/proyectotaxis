@@ -4,19 +4,22 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { User } from '../models/user.model';
 import { getAuth, updateProfile, sendPasswordResetEmail } from "firebase/auth"
 import { UtilsService } from './utils.service';
+import { getFirestore, setDoc, doc, getDoc } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
 
+  
+
   constructor(
-    private auth: AngularFireAuth,
-    private db: AngularFirestore,
     private utilsSvc: UtilsService 
 
   ){}
   
+  auth = inject(AngularFireAuth);
+  firestore = inject(AngularFirestore);
 
   //----AUTENTICACION----
 
@@ -48,6 +51,23 @@ export class FirebaseService {
   sendRecoveryEmail(email: string){
     return sendPasswordResetEmail(getAuth(), email);
   }
+
+  // -------------- BASE DE DATOS --------------
+
+  //seteo de documentos
+
+  setDocument(path: string, data: any){
+    return setDoc(doc(getFirestore(), path), data)
+  }
+
+  
+//obtener datos usuario
+
+  async getDocument(path: string){
+    return(await getDoc(doc(getFirestore(), path))).data();
+  }
+
+
 
 }
 

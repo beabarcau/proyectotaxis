@@ -41,7 +41,7 @@ export class AuthPage implements OnInit {
           carrera: ''
         }
         this.utilsSvc.setElementInLocalStorage('user', user);
-        this.utilsSvc.routerLink('/tabs')
+        this.utilsSvc.routerLink('./tabs/tab1')
 
         this.utilsSvc.dismissLoading();
 
@@ -70,4 +70,36 @@ export class AuthPage implements OnInit {
     }
   }
 
+
+  getUserInfo(uid: string) {
+    if (this.form.valid) {
+      this.utilsSvc.presentLoading({ message: 'Registrando Usuario' });
+      
+      let path = `user/${uid}`;
+  
+
+      this.firebaseSvc.getDocument(path).then((user: User) => {
+
+        this.utilsSvc.setElementInLocalStorage('user', user);
+        this.utilsSvc.routerLink('./tabs/tab1');
+        this.form.reset();
+        
+        this.utilsSvc.presentToast({
+          message: `Bienvenido ${user.name}`,
+          duration: 1500,
+          color: 'primary',
+          icon: 'person-outline'
+        })
+
+        error => {
+        this.utilsSvc.dismissLoading();
+        this.utilsSvc.presentToast({
+          message: error,
+          duration: 5000,
+          color: 'warning',
+          icon: 'alert-circle-outline'
+        });
+      }});
+    }
+  }
 }
