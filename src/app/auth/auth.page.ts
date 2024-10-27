@@ -41,7 +41,9 @@ export class AuthPage implements OnInit {
           carrera: ''
         }
         this.utilsSvc.setElementInLocalStorage('user', user);
+
         this.utilsSvc.routerLink('./tabs/tab1')
+
 
         this.utilsSvc.dismissLoading();
 

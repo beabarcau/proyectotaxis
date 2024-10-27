@@ -61,7 +61,7 @@ export class SignupPage implements OnInit {
         this.setUserInfo(uid);
 
         this.utilsSvc.setElementInLocalStorage('user', user);
-        this.utilsSvc.routerLink('/tabs');
+        this.utilsSvc.routerLink('/tab1');
 
         this.utilsSvc.dismissLoading();
 
