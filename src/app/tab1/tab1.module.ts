@@ -4,12 +4,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
 import { RouterModule } from '@angular/router';
-import { ComponentesComponent } from '../../componentes/componentes.component'; 
-import { ExampleComponent } from '../../scroll/scroll.component';
-import { RefreshListComponent } from '../../refresh/refresh.component';
+import { ExampleComponent } from '../scroll/scroll.component';
+import { RefreshListComponent } from '../refresh/refresh.component';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
+import { TabsModule } from '../tabs/tabs.module';
 
 @NgModule({
   imports: [
@@ -18,6 +18,7 @@ import { SharedModule } from '../../shared/shared.module';
     FormsModule,
     Tab1PageRoutingModule,
     SharedModule,
+    TabsModule,
     RouterModule.forChild([{ path: '', component: Tab1Page }])
 
   ],

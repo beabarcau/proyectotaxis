@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseService } from '../../services/firebase.service';
-import { UtilsService } from '../../services/utils.service';
-import { User } from '../../models/user.model';
+import { FirebaseService } from '../services/firebase.service';
+import { UtilsService } from '../services/utils.service';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-tab3',

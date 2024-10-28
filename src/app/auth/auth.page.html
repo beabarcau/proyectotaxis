@@ -42,10 +42,19 @@
 
 
 
-        <ion-button class="ion-margin-vertical" [disabled]="form.invalid" type="submit" shape="round">
-          Ingresar
-          <ion-icon slot="end" name="log-in-outline"></ion-icon>
-        </ion-button>
+        <div class="ion-margin-vertical">
+          <ion-button type="submit" shape="round">
+            Ingresar
+            <ion-icon slot="end" name="log-in-outline"></ion-icon>
+          </ion-button>
+        </div>
+        <div class="ion-margin-vertical">
+          <ion-button routerLink="/tab1" type="submit" shape="round">
+            Iniciar invitado
+            <ion-icon slot="end" name="log-in-outline"></ion-icon>
+          </ion-button>
+        </div>
+        
       
       <div class="signup">
         <div>No tienes una cuenta?</div>

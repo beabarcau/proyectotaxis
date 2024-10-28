@@ -1,9 +1,6 @@
 <ion-content [fullscreen]="true">
   <app-header></app-header>
-
   <div class="content">
-
-
     <ion-content class="ion-padding" id="main-content">
       <ion-card>
         <ion-card-header>
@@ -24,19 +21,15 @@
                 Carrera: {{user.carrera}}
                 <br>
                 Email: {{user.email}}
-                <!--<br>Edad:
-
-                !-->
+                <!--<br>Edad:-->
               </ion-label>
             </ion-item>
           </ion-list>
         </ion-card-content>
       </ion-card>
     </ion-content>
-
-    
-
   </div>
-
-
+  <ion-footer>
+    <app-tabs></app-tabs>
+  </ion-footer>
 </ion-content>
