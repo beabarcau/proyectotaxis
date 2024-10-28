@@ -42,7 +42,7 @@ export class AuthPage implements OnInit {
         }
         this.utilsSvc.setElementInLocalStorage('user', user);
 
-        this.utilsSvc.routerLink('./tabs/tab1')
+        this.utilsSvc.routerLink('/tab1')
 
 
         this.utilsSvc.dismissLoading();
@@ -83,7 +83,7 @@ export class AuthPage implements OnInit {
       this.firebaseSvc.getDocument(path).then((user: User) => {
 
         this.utilsSvc.setElementInLocalStorage('user', user);
-        this.utilsSvc.routerLink('./tabs/tab1');
+        this.utilsSvc.routerLink('/tab1');
         this.form.reset();
         
         this.utilsSvc.presentToast({
