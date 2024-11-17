@@ -8,7 +8,6 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 import { SharedModule } from '../shared/shared.module';
-import { TabsModule } from '../tabs/tabs.module';
 
 @NgModule({
   imports: [
@@ -17,8 +16,7 @@ import { TabsModule } from '../tabs/tabs.module';
     FormsModule,
     ExploreContainerComponentModule,
     Tab3PageRoutingModule,
-    SharedModule,
-    TabsModule
+    SharedModule
   ],
   declarations: [Tab3Page],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

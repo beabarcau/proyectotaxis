@@ -1,0 +1,13 @@
+ion-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 80%;
+    z-index: 1000;  // Asegúrate de que el menú tenga un z-index alto para estar por encima del contenido
+  }
+  
+  ion-content {
+    --ion-background-color: var(--ion-color-light);  // Ajusta esto según tu esquema de color
+  }
+  

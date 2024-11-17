@@ -9,7 +9,6 @@ import { RefreshListComponent } from '../refresh/refresh.component';
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { SharedModule } from '../shared/shared.module';
-import { TabsModule } from '../tabs/tabs.module';
 
 @NgModule({
   imports: [
@@ -18,7 +17,6 @@ import { TabsModule } from '../tabs/tabs.module';
     FormsModule,
     Tab1PageRoutingModule,
     SharedModule,
-    TabsModule,
     RouterModule.forChild([{ path: '', component: Tab1Page }])
 
   ],

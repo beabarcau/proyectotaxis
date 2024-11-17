@@ -5,7 +5,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'auth',
+    path: '',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthPageModule)
   },
   {
