@@ -1,0 +1,34 @@
+ion-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  ion-content {
+    --ion-background-color: var(--ion-color-light);
+  }
+  
+  .ion-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  #main-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;  // Asegura que el contenido sea desplazable
+    padding-top: 56px; // Evita que el contenido se superponga con el header
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 75%;
+  }
